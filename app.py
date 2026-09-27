@@ -66,7 +66,7 @@ if uploaded_file is not None:
                 scopes = ["https://www.googleapis.com/auth/spreadsheets"]
                 creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scopes)
                 gc = gspread.authorize(creds)
-                sheet = gc.open("Medical_Claims_DB").sheet1
+                sheet = gc.open_by_key("1EhU_ZS0qRRycCOFRxPpjzlKSQ2JmVmHWVF1-kLa9XrI").sheet1
 
                 # 4. Append row to Google Sheets
                 now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
